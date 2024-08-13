@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <style>
+        body {
+            background: aqua;
+            font-weight: bolder;
+        }
+
+        header{
+            background: black;
+            height: 40px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: red;
+            color: black;
+        }
+        .navbar .home-link {
+            color: black;
+            
+        }
+
+
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 3px solid red;
+
+        }
+
+        form input {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid aqua;
+            box-sizing: border-box;
+            border-radius: 40px;
+        }
+
+        .container{
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 3px solid red;
+            background: white;
+            color: black;
+            text-align: center;
+            border-radius: 14px;
+        }
+
+        .highlight{
+            color: red;
+        }
+
+        .btn {
+            background-color: red;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .btn:hover{
+            background: blue;
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/contact">Contact</a>
+        <a href="/calculator">Calculator</a>
+    </header>
+
+    <h1 style="font-weight: bolder;">CONTACT <span class="highlight">US</span></h1>
+
+    <form method="post" class="container">
+        {% csrf_token %}
+        <label for="fname">First Name</label><br>
+        <input type="text" name="fname" required><br>
+
+        <label for="last name">Last Name</label><br>
+        <input type="text" name="last name" required><br>
+
+        <label for="email">Email</label><br>
+        <input type="text" name="email" required><br>
+
+        <label for="address">Address</label><br>
+        <input type="address" id="address" name="address"><br>
+
+        <label for="contact">Contact</label><br>
+        <input type="phone number" name="phone number" required><br>
+
+        <label for="message">Message</label><br>
+        <textarea name="message" required></textarea><br>
+<br>
+<br>
+
+
+        <button type="submit" class="btn">Submit</button>
+
+    </form>
+
+</body>
+
+</html>

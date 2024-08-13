@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background: aqua;
+        }
+
+        header{
+            background: black;
+            height: 40px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: red;
+            color: black;
+        }
+        .navbar .home-link {
+            color: black;
+            
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 3px solid red;
+
+        }
+
+        form input {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid aqua;
+            box-sizing: border-box;
+            border-radius: 40px;
+        }
+
+        .container{
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 3px solid red;
+            background: white;
+            color: black;
+            text-align: center;
+            border-radius: 14px;
+        }
+
+        .highlight{
+            color: red;
+        }
+
+        .btn {
+            background-color: red;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .btn:hover{
+            background: blue;
+            transform: scale(1.1);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .table{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        thead{
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: 3px solid  black;
+        }
+
+        tbody{
+            color: black;
+            text-align: center;
+            border: 3px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/contact">Contact</a>
+        <a href="/calculator">Calculator</a>
+        <a href="/todo">ToDo</a>
+    </header>
+    <br>
+    <br>
+
+    <form method="post" class="container">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="title"><br>
+        <br>
+        <input type="date" name="date" placeholder="date due"><br>
+        <br>
+        <textarea name="description" placeholder="description"></textarea><br>
+<br>
+<br>
+        <select name="label" id=""><br>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+        </select><br>
+        <br>
+        <button type="submit">Add Task</button>
+    </form>
+    <br>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>title</th>
+                <th>date</th>
+                <th>description</th>
+                <th>label</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- creating a loop for a list so that you can show one by one in html. -->
+            {% for each in tasks %}
+            <tr>
+                <td>{{each.id}}</td>
+                <td>{{each.title}}</td>
+                <td>{{each.date}}</td>
+                <td>{{each.description}}</td>
+                <td>{{each.label}}</td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+ 
+    </table>
+    
+</body>
+</html>

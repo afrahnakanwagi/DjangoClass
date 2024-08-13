@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+                header{
+            background: black;
+            height: 40px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: black;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: red;
+            color: black;
+        }
+        .navbar .home-link {
+            color: black;
+            
+        }
+
+        body{
+            background: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/contact">Contact</a>
+        <a href="/calculator">Calculator</a>
+        <a href="/todo">ToDo</a>
+    </header>
+
+
+    
+    <form method="POST">
+        {%csrf_token%}
+        <input type="number" id="num1" name="num1" required placeholder="'first number"><br><br>
+        <input type="number" id="num2" name="num2" required placeholder="'second number"><br><br>
+        <small>Each room costs 400000</small>
+        <button type="submit">calculate</button>
+    </form>
+    
+    
+</body>
+</html>
