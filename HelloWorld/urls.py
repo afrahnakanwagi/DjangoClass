@@ -23,6 +23,7 @@ from Home.views import register
 from Home.views import calculator
 from Home.views import todo
 from Home.views import contact
+from Home.views import index
 
 
 
@@ -36,4 +37,5 @@ urlpatterns = [
     path('calculator/', calculator),
     path('contact/', contact),
     path('todo/', todo),
+    path('index/', index),
 ]

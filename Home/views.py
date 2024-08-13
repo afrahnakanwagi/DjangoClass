@@ -92,3 +92,7 @@ def todo (request):
     }
 
     return render(request,"todo.html", context)
+
+
+def index(request):
+    return render(request,"index.html")
