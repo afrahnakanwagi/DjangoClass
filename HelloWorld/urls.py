@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Home.views import index
 from Home.views import home
 from about.views import about
 from Home.views import login
@@ -23,13 +24,14 @@ from Home.views import register
 from Home.views import calculator
 from Home.views import todo
 from Home.views import contact
-from Home.views import index
+
 
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', index),
     path('home/',home),
     path('about/', about),
     path('login/', login),
@@ -37,5 +39,4 @@ urlpatterns = [
     path('calculator/', calculator),
     path('contact/', contact),
     path('todo/', todo),
-    path('index/', index),
-]
+]   
